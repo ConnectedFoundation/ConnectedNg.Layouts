@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "@connected-ng/layouts": {
+      "projectType": "library",
+      "root": "projects/connected-ng/layouts",
+      "sourceRoot": "projects/connected-ng/layouts/src",
+      "prefix": "cf",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/connected-ng/layouts/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/connected-ng/layouts/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/connected-ng/layouts/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/connected-ng/layouts/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }

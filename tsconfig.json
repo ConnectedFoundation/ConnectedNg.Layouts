@@ -3,6 +3,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@connected-ng/layouts": [
+        "./dist/connected-ng/layouts"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -16,7 +21,8 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022"
+    "module": "ES2022",
+    "preserveSymlinks": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
