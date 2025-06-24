@@ -1,11 +1,11 @@
 {
   "name": "@connected-ng/layouts",
-  "version": "0.0.1",
+  "version": "25.1.624-develop23989",
   "peerDependencies": {
     "@angular/common": "*",
     "@angular/core": "*",
     "@angular/material": "^20.0.3",
-    "@connected-ng/style-kit": "*"
+    "@connected-ng/style-kit": "^25.1.624-develop23796"
   },
   "dependencies": {
     "tslib": "^2.8.1"
