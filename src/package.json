@@ -1,5 +1,5 @@
 {
-  "name": "connected-ng.layouts",
+  "name": "@connected-ng/layouts",
   "version": "25.1.624-develop15856",
   "scripts": {
     "ng": "ng",
