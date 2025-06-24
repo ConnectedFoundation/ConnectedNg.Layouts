@@ -1,6 +1,6 @@
 {
   "name": "@connected-ng/layouts",
-  "version": "25.1.624-develop23989",
+  "version": "25.1.624-develop24064",
   "peerDependencies": {
     "@angular/common": "*",
     "@angular/core": "*",
