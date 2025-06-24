@@ -1,6 +1,6 @@
 {
   "name": "connected-ng.layouts",
-  "version": "0.0.0",
+  "version": "25.1.624-develop15796",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
