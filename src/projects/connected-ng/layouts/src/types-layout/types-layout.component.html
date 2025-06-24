@@ -1,22 +1,22 @@
-<mat-table [dataSource]="items()" multiTemplateDataRows>
+<table mat-table [dataSource]="items()" multiTemplateDataRows>
     @for (column of columnsToDisplay(); track column) {
     <ng-container matColumnDef="{{column}}"> 
-        <mat-header-cell *matHeaderCellDef>{{column}}</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element[column]}}</mat-cell>
+        <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+        <td mat-cell *matCellDef="let element">{{element[column]}}</td>
     </ng-container>
     }
     <ng-container matColumnDef="expand" *ngIf="detailTemplate()" stickyEnd>
-        <mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</mat-header-cell>
-        <mat-cell *matCellDef="let element">
+        <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+        <td mat-cell *matCellDef="let element">
             <button mat-icon-button aria-label="expand row" (click)="toggle(element); $event.stopPropagation()" class="toggle-button" [class.toggle-button-expanded]="isExpanded(element)">
                 <mat-icon>keyboard_arrow_down</mat-icon>
             </button>
-        </mat-cell>
+        </td>
     </ng-container>
 
     <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
     <ng-container matColumnDef="expandedDetail">
-        <mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand().length">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand().length">
             <div class="element-detail-wrapper" [class.element-detail-wrapper-expanded]="isExpanded(element)">
                 <div *ngIf="detailTemplate()" class="element-detail">
                     <ng-container *ngTemplateOutlet="detailTemplate() ?? null; context: {$implicit: element}">
@@ -24,10 +24,11 @@
                     </ng-container>
                 </div>
             </div>
-        </mat-cell>
+        </td>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand()"></mat-header-row>
-    <mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand();" class="element-row" [class.expanded-row]="isExpanded(element)" (click)="toggle(element)"></mat-row>
-    <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></mat-row>
-</mat-table>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand()"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand();" class="element-row" [class.expanded-row]="isExpanded(element)" (click)="toggle(element)">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
+</table>
