@@ -7,7 +7,8 @@
     "@angular/material": "^19.2.9"
   },
   "dependencies": {
+    "@connected-ng/style-kit": "file:../../../../ConnectedNg.StyleKit/dist/connected-ng/style-kit",
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false  
 }

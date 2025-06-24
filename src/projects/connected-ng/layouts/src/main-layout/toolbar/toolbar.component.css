@@ -1,0 +1,11 @@
+.main-layout-toolbar{
+    background-color: var(--mat-sys-background);
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}

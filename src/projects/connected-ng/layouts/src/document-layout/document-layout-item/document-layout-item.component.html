@@ -1,0 +1,14 @@
+
+<ng-template #content>
+    <mat-expansion-panel [expanded]="expanded()" (opened)="expanded.set(true)" (closed)="expanded.set(false)">
+        <mat-expansion-panel-header>
+            <mat-panel-title>{{title()}}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-action-row #actionRow *ngIf="showActionRow()">
+            <ng-content select="action-row">
+            </ng-content>
+        </mat-action-row>    
+        <ng-content>
+        </ng-content>
+    </mat-expansion-panel>
+</ng-template>

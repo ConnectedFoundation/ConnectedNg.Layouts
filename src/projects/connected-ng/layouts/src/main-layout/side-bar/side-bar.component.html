@@ -1,0 +1,10 @@
+<mat-sidenav-container [class]="sizeClasses()">
+    <mat-sidenav [opened]="visible()" mode="side" [fixedInViewport]="fixedInViewport()" [style.width]="width()">
+        <ng-content select="side-bar-content">
+        </ng-content>
+    </mat-sidenav>
+    <mat-sidenav-content [style.margin-left]="width()">
+        <ng-content select="main-content">
+        </ng-content>
+    </mat-sidenav-content>  
+</mat-sidenav-container>

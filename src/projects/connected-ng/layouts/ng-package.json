@@ -3,5 +3,6 @@
   "dest": "../../../dist/connected-ng/layouts",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [ "@connected-ng/style-kit"]
 }

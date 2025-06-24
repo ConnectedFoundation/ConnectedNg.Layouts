@@ -1,0 +1,29 @@
+@use '@connected-ng/style-kit/utilities'; 
+@use '@angular/material' as mat; 
+
+ .main-wrapper{          
+   max-width: min(100% - clamp(1rem, 5%, 4rem), 1720px - 4rem);
+   border: 1px solid var(--mat-sys-outline-variant);
+   margin-block: 1rem;
+   margin-inline: auto;
+   border-radius: 0.65rem;
+   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .1);
+   position: relative;
+   overflow: clip; 
+      &.media-xsmall{
+         max-width: 100%;
+         border: 0px solid var(--mat-sys-outline-variant);
+         margin-block: 0;
+         box-shadow: none;
+         border-radius: 0;
+      } 
+      &.media-small{
+         max-width: min(100% - clamp(1rem, 5%, 2rem), 1720px - 2rem);
+      } 
+}
+
+.main-layout-content{
+   padding: .25rem 1rem;
+}
+
+

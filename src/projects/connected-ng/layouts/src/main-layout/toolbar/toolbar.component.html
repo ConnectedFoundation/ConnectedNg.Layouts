@@ -1,0 +1,9 @@
+<div name="toolbar" class="main-layout-toolbar">
+    <button mat-icon-button (click)="cycleSideBarStates()"><mat-icon>{{ !isCompletelyOpen() ? 'menu' : 'menu_open' }}</mat-icon></button>
+    <div>
+        <ng-content>
+        </ng-content>
+    </div>
+    <button mat-icon-button (click)="toggleDrawer()"><mat-icon>{{ isDrawerOpen() ? 'filter_list_off' : 'filter_list' }}</mat-icon></button>
+</div> 
+ 

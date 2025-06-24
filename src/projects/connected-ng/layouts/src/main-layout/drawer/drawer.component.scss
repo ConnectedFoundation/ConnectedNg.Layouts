@@ -1,0 +1,10 @@
+@use '@angular/material' as mat;
+ 
+.mat-drawer-container{
+    height: 100%
+}
+
+.mat-drawer{
+    padding: 1rem 1.125rem;
+    background-color: var(--mat-sidenav-container-background-color, var(--mat-sys-surface));
+}

@@ -1,0 +1,14 @@
+// :host {
+//     display: contents;
+// }
+.main-layout-fab{
+    position: absolute;
+    display: flex;
+    margin-top: 1rem;
+    bottom: 1rem;
+    right: 1rem;
+    justify-content: end;
+    z-index: 1;
+ }
+
+
