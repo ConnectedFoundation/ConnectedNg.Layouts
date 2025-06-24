@@ -10,6 +10,8 @@ else
 fi
 
 version=$(npm pkg get version | tr -d "\"")
+git add package.json
+git add package-lock.json
 git add **package.json
 git add **package-lock.json
 git commit -m "vrs: increment version to \"$version\""
