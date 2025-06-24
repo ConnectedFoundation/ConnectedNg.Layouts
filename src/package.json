@@ -1,6 +1,6 @@
 {
   "name": "connected-ng.layouts",
-  "version": "25.1.624-develop15796",
+  "version": "25.1.624-develop15856",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^19.0.0",
     "@angular/cdk": "~19.2.9",
