@@ -3,10 +3,8 @@
   "version": "25.1.624-develop24064",
   "peerDependencies": {
     "@angular/common": "*",
-    "@angular/core": "*"
-  },
-  "dependencies": {
-    "tslib": "^2.8.1"
+    "@angular/core": "*",
+    "rslib": "*"
   },
   "sideEffects": false
 }
