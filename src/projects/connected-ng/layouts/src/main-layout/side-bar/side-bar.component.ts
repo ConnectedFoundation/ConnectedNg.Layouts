@@ -1,4 +1,4 @@
-import { Component, computed, input, signal, SimpleChanges } from '@angular/core';
+import { Component, computed, input, signal, SimpleChanges, WritableSignal } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SizeProviderService, SizeBreakpoints } from '@connected-ng/style-kit'
 import { OnDestroy, inject } from '@angular/core';
@@ -33,7 +33,7 @@ export class SideBarComponent {
   
   isMobile = computed(() => this.currentSize() == SizeBreakpoints.XSmall);
 
-  currentSize = this.sizeProvider.getSizeChangeSignal(); 
+  currentSize: WritableSignal<SizeBreakpoints> = this.sizeProvider.getSizeChangeSignal(); 
 
   sizeClasses = computed(() => {
     switch(this.currentSize()){

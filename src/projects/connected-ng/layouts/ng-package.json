@@ -4,5 +4,7 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "allowedNonPeerDependencies": [ "@connected-ng/style-kit"]
+  "allowedNonPeerDependencies": [
+    "@connected-ng/style-kit"
+  ]
 }

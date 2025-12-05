@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@connected-ng/layouts": [
+                "./dist/connected-ng/layouts"
+            ],
+            "@connected-ng/style-kit": [
+                "./dist/connected-ng/style-kit"
+            ]
+        },
+    }
+}

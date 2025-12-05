@@ -3,12 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "paths": {
-      "@connected-ng/layouts": [
-        "./dist/connected-ng/layouts"
-      ]
-    },
-    "outDir": "./dist/out-tsc",
+     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,

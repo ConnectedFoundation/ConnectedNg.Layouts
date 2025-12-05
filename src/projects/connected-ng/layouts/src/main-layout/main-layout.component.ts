@@ -1,4 +1,4 @@
-import { Component, EventEmitter, computed, effect, input, model } from '@angular/core';
+import { Component, EventEmitter, computed, effect, input, model, WritableSignal } from '@angular/core';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { DrawerComponent } from './drawer/drawer.component';
 import { MainLayoutContentComponent } from './main-layout-content/main-layout-content.component';
@@ -40,7 +40,7 @@ export class MainLayoutComponent {
 
   sizeProvider = inject(SizeProviderService);
 
-  currentSize = this.sizeProvider.getSizeChangeSignal();
+  currentSize: WritableSignal<SizeBreakpoints> = this.sizeProvider.getSizeChangeSignal();
 
   sizeClasses = computed(() => {
     switch (this.currentSize()) {

@@ -13,6 +13,9 @@ app/**/*.js.map
 node_modules/
 bower_components/
 
+# Local StyleKit junction for development
+src/node_modules/@connected-ng/style-kit
+
 # IDEs and editors
 .idea/
 
@@ -32,6 +35,11 @@ e2e/*.map
 
 # System Files
 .DS_Store/
+
+# Local development configuration files
+src/tsconfig.paths.local.json
+src/projects/connected-ng/layouts/ng-package.json
+src/.dev-paths.json
 
 ### macOS ###
 # General
