@@ -1,7 +1,6 @@
-import { Component, EventEmitter, computed, effect, input, model, WritableSignal } from '@angular/core';
+import { Component, computed, input, model, WritableSignal } from '@angular/core';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { DrawerComponent } from './drawer/drawer.component';
-import { MainLayoutContentComponent } from './main-layout-content/main-layout-content.component';
 import { SizeProviderService, SizeBreakpoints } from '@connected-ng/style-kit'
 import { inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,8 +12,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
   imports: [
     MatButtonModule,
     SideBarComponent,
-    DrawerComponent, MainLayoutContentComponent, MatIconModule,
-    ToolbarComponent],
+    DrawerComponent, MatIconModule,
+    ToolbarComponent
+  ],
   providers: [SizeProviderService],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss'
