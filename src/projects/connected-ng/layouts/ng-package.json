@@ -2,7 +2,10 @@
   "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../../dist/connected-ng/layouts",
   "lib": {
-    "entryFile": "src/public-api.ts"
+    "entryFile": "src/public-api.ts",
+    "styleIncludePaths": [
+      "../../../../../../ConnectedNg.StyleKit/src/dist/connected-ng/style-kit/assets/scss"
+    ]
   },
   "allowedNonPeerDependencies": [
     "@connected-ng/style-kit"
