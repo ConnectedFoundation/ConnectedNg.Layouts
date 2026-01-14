@@ -1,26 +1,34 @@
 <div class="main-wrapper" [class]="sizeClasses()">
-    <cf-side-bar [visible]="isSideBarOpen()" [collapsed]="isSideBarCollapsed()">
-        <ng-container ngProjectAs="side-bar-content">
-            <ng-content select="cf-main-layout-content[for='side-bar']">
-            </ng-content>
+  <cf-side-bar
+    [visible]="isSideBarOpen()"
+    (closing)="isSideBarOpen.set(false)"
+    [collapsed]="isSideBarCollapsed()"
+  >
+    <ng-container ngProjectAs="side-bar-content">
+      <ng-content select="cf-main-layout-content[for='side-bar']"> </ng-content>
+    </ng-container>
+    <ng-container ngProjectAs="main-content">
+      <cf-drawer [(isOpen)]="isDrawerOpen">
+        <ng-container ngProjectAs="drawer-content">
+          <ng-content select="cf-main-layout-content[for='drawer']">
+          </ng-content>
         </ng-container>
         <ng-container ngProjectAs="main-content">
-            <cf-drawer [(isOpen)]="isDrawerOpen">
-                <ng-container ngProjectAs="drawer-content">
-                    <ng-content select="cf-main-layout-content[for='drawer']">
-                    </ng-content>
-                </ng-container>
-                <ng-container ngProjectAs="main-content">                    
-                    <cf-toolbar [sideBarStateOrder]="sideBarStateOrder()" [(isSideBarOpen)]="isSideBarOpen" [(isSideBarCollapsed)]="isSideBarCollapsed" [(isDrawerOpen)]="isDrawerOpen">
-                        <ng-content select="cf-main-layout-content[for='toolbar']">
-                        </ng-content>
-                    </cf-toolbar>
-                    <div class="main-layout-content">
-                        <ng-content select="cf-main-layout-content[for='main']">        
-                        </ng-content>
-                    </div>
-                </ng-container>
-            </cf-drawer>
+          <cf-toolbar
+            [sideBarStateOrder]="sideBarStateOrder()"
+            [(isSideBarOpen)]="isSideBarOpen"
+            [(isSideBarCollapsed)]="isSideBarCollapsed"
+            [(isDrawerOpen)]="isDrawerOpen"
+          >
+            <ng-content select="cf-main-layout-content[for='toolbar']">
+            </ng-content>
+          </cf-toolbar>
+          <div class="main-layout-content">
+            <ng-content select="cf-main-layout-content[for='main']">
+            </ng-content>
+          </div>
         </ng-container>
-    </cf-side-bar>   
+      </cf-drawer>
+    </ng-container>
+  </cf-side-bar>
 </div>

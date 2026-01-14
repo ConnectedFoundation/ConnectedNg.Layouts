@@ -1,4 +1,4 @@
-import { Component, computed, input, signal, SimpleChanges, WritableSignal } from '@angular/core';
+import { Component, computed, input, output, signal, SimpleChanges, WritableSignal } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SizeProviderService, SizeBreakpoints } from '@connected-ng/style-kit'
 import { OnDestroy, inject } from '@angular/core';
@@ -13,12 +13,14 @@ import { OnDestroy, inject } from '@angular/core';
 })
 
 export class SideBarComponent {
-  
+
   sizeProvider = inject(SizeProviderService);
-  
+
   visible = input<boolean>();
   collapsed = input<boolean>();
-  
+
+  mode = computed<'side' | 'over'>(() => this.isMobile() ? 'over' : 'side');
+
   width = computed(() => {
     if (!this.visible())
       return 0;
@@ -29,14 +31,20 @@ export class SideBarComponent {
     return '350px';
   });
 
-  fixedInViewport = computed(()=> this.isMobile());
-  
+  offset = computed(() => {
+    if (this.isMobile())
+      return 0;
+    return this.width();
+  });
+
+  fixedInViewport = computed(() => this.isMobile());
+
   isMobile = computed(() => this.currentSize() == SizeBreakpoints.XSmall);
 
-  currentSize: WritableSignal<SizeBreakpoints> = this.sizeProvider.getSizeChangeSignal(); 
+  currentSize: WritableSignal<SizeBreakpoints> = this.sizeProvider.getSizeChangeSignal();
 
   sizeClasses = computed(() => {
-    switch(this.currentSize()){
+    switch (this.currentSize()) {
       case SizeBreakpoints.Small: return ['media-small'];
       case SizeBreakpoints.XSmall: return ['media-xsmall'];
       case SizeBreakpoints.Medium: return ['media-medium'];
@@ -44,7 +52,7 @@ export class SideBarComponent {
 
     return ['media-medium'];
   })
- 
+
   ngOnDestroy(): void {
-  } 
+  }
 }  

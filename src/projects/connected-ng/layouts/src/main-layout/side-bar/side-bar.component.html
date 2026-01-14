@@ -1,9 +1,9 @@
 <mat-sidenav-container [class]="sizeClasses()">
-    <mat-sidenav [opened]="visible()" mode="side" [fixedInViewport]="fixedInViewport()" [style.width]="width()">
+    <mat-sidenav [opened]="visible()" [mode]="mode()" [fixedInViewport]="fixedInViewport()" [style.width]="width()">
         <ng-content select="side-bar-content">
         </ng-content>
     </mat-sidenav>
-    <mat-sidenav-content [style.margin-left]="width()">
+    <mat-sidenav-content [style.margin-left]="offset()">
         <ng-content select="main-content">
         </ng-content>
     </mat-sidenav-content>  

@@ -48,14 +48,14 @@ export class ToolbarComponent {
   }
 
   setDefaultState(state: 'closed' | 'collapsed' | 'open') {
-    if (state === 'closed'){
+    if (state === 'closed') {
       this.isSideBarOpen.set(false);
       this.isSideBarCollapsed.set(true);
     }
-    else if (state === 'collapsed'){
+    else if (state === 'collapsed') {
       this.isSideBarCollapsed.set(true);
     }
-    else if (state === 'open'){
+    else if (state === 'open') {
       this.isSideBarCollapsed.set(false);
       this.isSideBarOpen.set(true);
     }
@@ -65,14 +65,20 @@ export class ToolbarComponent {
     if (changes['sideBarStateOrder']) {
       this.cycleSideBarStates(true);
     }
+
+    if (changes['isSideBarCollapsed']) {
+      debugger
+      this.currentSideBarState.set(undefined);
+      debugger
+      this.cycleSideBarStates(true);
+    }
   }
 
   cycleSideBarStates(automaticHandler = false) {
     if (!this.currentSideBarState()) {
-      let state = this.getDefaultState();
+      let state = this.setToValidState(this.getDefaultState());      
       this.currentSideBarState.set(state);
       this.setDefaultState(state);
-
 
       return;
     }
