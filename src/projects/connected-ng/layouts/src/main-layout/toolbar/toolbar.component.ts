@@ -67,9 +67,7 @@ export class ToolbarComponent {
     }
 
     if (changes['isSideBarCollapsed']) {
-      debugger
       this.currentSideBarState.set(undefined);
-      debugger
       this.cycleSideBarStates(true);
     }
   }
