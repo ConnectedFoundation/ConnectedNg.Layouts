@@ -13,7 +13,6 @@ export class DrawerComponent {
   isOpen = model<boolean>(false);
  
   openChanged(opened: boolean) {
-    console.log(opened);
     this.isOpen.set(opened);
   }
 }
