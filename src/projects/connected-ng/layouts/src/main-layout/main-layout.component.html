@@ -4,6 +4,8 @@
     (closing)="isSideBarOpen.set(false)"
     [collapsed]="isSideBarCollapsed()"
   >
+    6c8c456 (feat: add option to disable sidebar controls in toolbar; feat: add
+    FAB support to main layout)
     <ng-container ngProjectAs="side-bar-content">
       <ng-content select="cf-main-layout-content[for='side-bar']"> </ng-content>
     </ng-container>
@@ -15,6 +17,8 @@
         </ng-container>
         <ng-container ngProjectAs="main-content">
           <cf-toolbar
+            [isSideBarEnabled]="isSideBarEnabled()"
+            [isDrawerEnabled]="isDrawerEnabled()"
             [sideBarStateOrder]="sideBarStateOrder()"
             [(isSideBarOpen)]="isSideBarOpen"
             [(isSideBarCollapsed)]="isSideBarCollapsed"
@@ -26,6 +30,23 @@
           <div class="main-layout-content">
             <ng-content select="cf-main-layout-content[for='main']">
             </ng-content>
+
+            <div
+              class="main-layout-fab"
+              [style.display]="fabVisible() ? 'flex' : 'none'"
+            >
+              <button
+                mat-fab
+                class="success"
+                (click)="openBottomSheetActions()"
+              >
+                <mat-icon>published_with_changes</mat-icon>
+              </button>
+            </div>
+            <ng-template #bottomSheetOutlet>
+              <ng-content select="cf-main-layout-content[for='fabActions']">
+              </ng-content>
+            </ng-template>
           </div>
         </ng-container>
       </cf-drawer>

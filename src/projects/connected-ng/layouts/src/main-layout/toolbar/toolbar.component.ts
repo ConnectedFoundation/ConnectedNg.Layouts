@@ -15,6 +15,9 @@ export class ToolbarComponent {
   isSideBarCollapsed = model<boolean>(true);
   isDrawerOpen = model<boolean>(false);
 
+  isSideBarEnabled = input<boolean>(true);
+  isDrawerEnabled = input<boolean>(true);
+
   isCompletelyOpen = computed(() => this.sideBarStateOrder().length == 0 || this.currentSideBarState() == this.sideBarStateOrder()[this.sideBarStateOrder().length - 1]);
 
   sideBarStateOrder = input<('closed' | 'collapsed' | 'open')[]>(['collapsed', 'open']);

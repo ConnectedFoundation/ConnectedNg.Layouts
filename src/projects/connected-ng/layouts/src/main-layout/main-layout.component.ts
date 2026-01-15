@@ -1,4 +1,4 @@
-import { Component, computed, input, model, WritableSignal } from '@angular/core';
+import { Component, computed, contentChildren, input, model, TemplateRef, viewChild, viewChildren, WritableSignal } from '@angular/core';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { DrawerComponent } from './drawer/drawer.component';
 import { SizeProviderService, SizeBreakpoints } from '@connected-ng/style-kit'
@@ -6,6 +6,8 @@ import { inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { CdkPortalOutlet, ComponentType, Portal } from '@angular/cdk/portal';
 
 @Component({
   selector: 'cf-main-layout',
@@ -13,7 +15,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatButtonModule,
     SideBarComponent,
     DrawerComponent, MatIconModule,
-    ToolbarComponent
+    ToolbarComponent,
+    CdkPortalOutlet
   ],
   providers: [SizeProviderService],
   templateUrl: './main-layout.component.html',
@@ -23,6 +26,17 @@ export class MainLayoutComponent {
   isSideBarOpen = model<boolean>(false);
   isSideBarCollapsed = model<boolean>(false);
   isDrawerOpen = model<boolean>(false);
+
+  isSideBarEnabled = input<boolean>(true);
+  isDrawerEnabled = input<boolean>(true);
+
+  fabVisible = input<boolean>(false);
+  fabEnabled = input<boolean>(true);
+
+
+  private _bottomSheet = inject(MatBottomSheet);
+  fabActionsTemplate = viewChild<TemplateRef<unknown>>('bottomSheetOutlet');
+  fabActionsTemplateChildren = viewChildren('bottomSheetOutlet');
 
   sideBarStateOrder = input<('closed' | 'collapsed' | 'open')[]>(['collapsed', 'open']);
 
@@ -46,4 +60,8 @@ export class MainLayoutComponent {
 
   ngOnDestroy(): void { }
 
+  openBottomSheetActions() {
+    if (this.fabActionsTemplate())
+      this._bottomSheet.open(this.fabActionsTemplate()!);
+  }
 }

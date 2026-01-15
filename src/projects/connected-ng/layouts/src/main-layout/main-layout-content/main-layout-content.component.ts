@@ -7,9 +7,9 @@ import { Component, ElementRef, inject, input } from '@angular/core';
   styleUrl: './main-layout-content.component.css'
 })
 export class MainLayoutContentComponent {
-  for = input.required<'drawer' | 'side-bar' | 'main' | 'toolbar'>();
+  for = input.required<'drawer' | 'side-bar' | 'main' | 'toolbar' | 'fabActions'>();
 
-  constructor(){
+  constructor() {
 
   }
 }
