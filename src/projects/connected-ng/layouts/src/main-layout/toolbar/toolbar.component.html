@@ -1,6 +1,6 @@
 <div name="toolbar" class="main-layout-toolbar">
     <button mat-icon-button (click)="cycleSideBarStates()"><mat-icon>{{ !isCompletelyOpen() ? 'menu' : 'menu_open' }}</mat-icon></button>
-    <div style="width:100%">
+    <div class="text-truncate" style="width:100%">
         <ng-content>
         </ng-content>
     </div>
