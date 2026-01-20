@@ -33,13 +33,15 @@
               class="main-layout-fab"
               [style.display]="fabVisible() ? 'flex' : 'none'"
             >
-              <button
-                mat-fab
-                class="success"
-                (click)="openBottomSheetActions()"
-              >
-                <mat-icon>published_with_changes</mat-icon>
-              </button>
+              <div class="fab-wrapper">
+                <button
+                  mat-fab
+                  class="success"
+                  (click)="openBottomSheetActions()"
+                >
+                  <mat-icon>published_with_changes</mat-icon>
+                </button>
+              </div>
             </div>
             <ng-template #bottomSheetOutlet>
               <ng-content select="cf-main-layout-content[for='fabActions']">
