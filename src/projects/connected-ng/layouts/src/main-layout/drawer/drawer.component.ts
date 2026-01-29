@@ -12,6 +12,8 @@ export class DrawerComponent {
 
   isOpen = model<boolean>(false);
 
+  isCloseDisabled = input<boolean>(false);
+
   mode = input<'over' | 'side'>('over');
 
   position = input<'start' | 'end'>('end');

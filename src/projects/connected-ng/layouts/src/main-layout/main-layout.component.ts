@@ -31,6 +31,7 @@ export class MainLayoutComponent {
   isDrawerEnabled = input<boolean>(true);
   drawerPosition = input<'start' | 'end'>('end');
   drawerMode = input<'side' | 'over'>('over');
+  isDrawerCloseOnClickEnabled = input<boolean>();
 
   fabVisible = input<boolean>(false);
   fabEnabled = input<boolean>(true);

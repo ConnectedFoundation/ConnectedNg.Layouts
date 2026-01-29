@@ -3,6 +3,7 @@
     [opened]="isOpen()"
     (openedChange)="openChanged($event)"
     [position]="position()"
+    [disableClose]="isCloseDisabled()"
     #drawer
     [mode]="mode()"
   >
