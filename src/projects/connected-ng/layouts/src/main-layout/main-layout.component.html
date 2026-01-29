@@ -8,7 +8,11 @@
       <ng-content select="cf-main-layout-content[for='side-bar']"> </ng-content>
     </ng-container>
     <ng-container ngProjectAs="main-content">
-      <cf-drawer [(isOpen)]="isDrawerOpen">
+      <cf-drawer
+        [(isOpen)]="isDrawerOpen"
+        [position]="drawerPosition()"
+        [mode]="drawerMode()"
+      >
         <ng-container ngProjectAs="drawer-content">
           <ng-content select="cf-main-layout-content[for='drawer']">
           </ng-content>

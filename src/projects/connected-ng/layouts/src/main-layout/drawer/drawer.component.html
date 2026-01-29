@@ -1,8 +1,14 @@
 <mat-drawer-container>
-    <mat-drawer [opened]="isOpen()" (openedChange)="openChanged($event)" position="end" #drawer mode="over">
-      <ng-content select="drawer-content"></ng-content>
-    </mat-drawer>
-    <mat-drawer-content>     
-      <ng-content select="main-content"></ng-content>
-    </mat-drawer-content>
-  </mat-drawer-container>
+  <mat-drawer
+    [opened]="isOpen()"
+    (openedChange)="openChanged($event)"
+    [position]="position()"
+    #drawer
+    [mode]="mode()"
+  >
+    <ng-content select="drawer-content"></ng-content>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content select="main-content"></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>

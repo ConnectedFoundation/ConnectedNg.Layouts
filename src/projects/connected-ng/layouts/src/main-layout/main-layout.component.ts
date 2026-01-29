@@ -29,6 +29,8 @@ export class MainLayoutComponent {
 
   isSideBarEnabled = input<boolean>(true);
   isDrawerEnabled = input<boolean>(true);
+  drawerPosition = input<'start' | 'end'>('end');
+  drawerMode = input<'side' | 'over'>('over');
 
   fabVisible = input<boolean>(false);
   fabEnabled = input<boolean>(true);

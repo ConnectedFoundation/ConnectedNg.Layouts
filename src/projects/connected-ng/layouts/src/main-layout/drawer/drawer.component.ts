@@ -11,7 +11,11 @@ export class DrawerComponent {
   protected readonly isMobile = signal(false);
 
   isOpen = model<boolean>(false);
- 
+
+  mode = input<'over' | 'side'>('over');
+
+  position = input<'start' | 'end'>('end');
+
   openChanged(opened: boolean) {
     this.isOpen.set(opened);
   }
