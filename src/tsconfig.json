@@ -3,7 +3,15 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@connected-ng/layouts": [
+        "./projects/connected-ng/layouts/src/public-api.ts"
+      ],
+      "@connected-ng/style-kit": [
+        "../ConnectedNg.StyleKit/src/projects/connected-ng/style-kit/src/public-api.ts"
+      ]
+    },
+    "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -16,8 +24,7 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022",
-    "preserveSymlinks": true
+    "module": "ES2022"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

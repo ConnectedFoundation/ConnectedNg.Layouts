@@ -7,9 +7,13 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": []
+    "types": [],
+    "paths": {
+      "@connected-ng/layouts": ["../../../dist/connected-ng/layouts"],
+      "@connected-ng/style-kit": [
+        "../../../../../ConnectedNg.StyleKit/src/dist/connected-ng/style-kit"
+      ]
+    }
   },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  "exclude": ["**/*.spec.ts"]
 }
