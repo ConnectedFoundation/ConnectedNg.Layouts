@@ -1,13 +1,12 @@
-import { Component, computed, contentChildren, input, model, TemplateRef, viewChild, viewChildren, WritableSignal } from '@angular/core';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { DrawerComponent } from './drawer/drawer.component';
-import { SizeProviderService, SizeBreakpoints } from '@connected-ng/style-kit'
-import { inject } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { CdkPortalOutlet } from '@angular/cdk/portal';
+import { Component, computed, inject, input, model, TemplateRef, viewChild, viewChildren, WritableSignal } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { CdkPortalOutlet, ComponentType, Portal } from '@angular/cdk/portal';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { SizeBreakpoints, SizeProviderService } from '@connected-ng/style-kit';
+import { DrawerComponent } from './drawer/drawer.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @Component({
   selector: 'cf-main-layout',
@@ -29,6 +28,9 @@ export class MainLayoutComponent {
 
   isSideBarEnabled = input<boolean>(true);
   isDrawerEnabled = input<boolean>(true);
+  drawerBadgeText = input<string | number | null>(null);
+  drawerIconClass = input<string>();
+  drawerBadgeHidden = input<boolean>(true);
   drawerPosition = input<'start' | 'end'>('end');
   drawerMode = input<'side' | 'over'>('over');
   isDrawerCloseOnClickEnabled = input<boolean>();

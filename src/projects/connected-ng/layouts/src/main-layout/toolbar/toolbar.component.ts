@@ -1,11 +1,12 @@
-import { Component, computed, effect, input, model, signal, SimpleChanges } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { Component, computed, input, model, signal, SimpleChanges } from '@angular/core';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
   selector: 'cf-toolbar',
-  imports: [MatIconModule, MatButtonModule],
+  imports: [MatIconModule, MatButtonModule, MatBadgeModule],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css'
 })
@@ -17,6 +18,9 @@ export class ToolbarComponent {
 
   isSideBarEnabled = input<boolean>(true);
   isDrawerEnabled = input<boolean>(true);
+  drawerBadgeText = input<string | number | null>(null);
+  drawerBadgeHidden = input<boolean>(true);
+  drawerIconClass = input<string>();
 
   isCompletelyOpen = computed(() => this.sideBarStateOrder().length == 0 || this.currentSideBarState() == this.sideBarStateOrder()[this.sideBarStateOrder().length - 1]);
 

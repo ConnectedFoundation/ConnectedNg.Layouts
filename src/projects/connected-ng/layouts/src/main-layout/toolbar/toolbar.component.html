@@ -9,7 +9,11 @@
   </div>
   @if(isDrawerEnabled()){
   <button mat-icon-button (click)="toggleDrawer()">
-    <mat-icon>{{
+    <mat-icon
+      [class]="drawerIconClass()"
+      [matBadge]="drawerBadgeText()"
+      [matBadgeHidden]="drawerBadgeHidden()"
+    >{{
       isDrawerOpen() ? "filter_list_off" : "filter_list"
     }}</mat-icon>
   </button>
