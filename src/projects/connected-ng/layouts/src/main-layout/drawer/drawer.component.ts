@@ -14,11 +14,18 @@ export class DrawerComponent {
 
   isCloseDisabled = input<boolean>(false);
 
+  useContentBackdrop = input<boolean>(false);
+
   mode = input<'over' | 'side'>('over');
 
   position = input<'start' | 'end'>('end');
 
   openChanged(opened: boolean) {
     this.isOpen.set(opened);
+  }
+
+  closeFromContentBackdrop() {
+    if (!this.isCloseDisabled())
+      this.isOpen.set(false);
   }
 }

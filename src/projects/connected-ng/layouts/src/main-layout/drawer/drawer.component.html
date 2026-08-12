@@ -1,4 +1,4 @@
-<mat-drawer-container>
+<mat-drawer-container [hasBackdrop]="useContentBackdrop() ? false : null">
   <mat-drawer
     [opened]="isOpen()"
     (openedChange)="openChanged($event)"
@@ -10,6 +10,11 @@
     <ng-content select="drawer-content"></ng-content>
   </mat-drawer>
   <mat-drawer-content>
+    <div
+      class="content-backdrop"
+      [class.shown]="useContentBackdrop() && isOpen() && mode() === 'over'"
+      (click)="closeFromContentBackdrop()"
+    ></div>
     <ng-content select="main-content"></ng-content>
   </mat-drawer-content>
 </mat-drawer-container>

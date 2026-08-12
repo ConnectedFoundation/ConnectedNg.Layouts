@@ -8,3 +8,19 @@
     padding: 1rem 1.125rem;
     background-color: var(--mat-sidenav-container-background-color, var(--mat-sys-surface));
 }
+
+.content-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 10000;
+    visibility: hidden;
+    pointer-events: none;
+    background-color: transparent;
+    transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1), visibility 400ms;
+
+    &.shown {
+        visibility: visible;
+        pointer-events: auto;
+        background-color: var(--mat-sidenav-scrim-color, color-mix(in srgb, var(--mat-sys-neutral-variant20) 40%, transparent));
+    }
+}

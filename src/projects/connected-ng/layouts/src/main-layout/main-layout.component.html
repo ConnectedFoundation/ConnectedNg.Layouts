@@ -12,6 +12,7 @@
         [(isOpen)]="isDrawerOpen"
         [position]="drawerPosition()"
         [mode]="drawerMode()"
+        [useContentBackdrop]="drawerUsesContentBackdrop()"
         [isCloseDisabled]="isDrawerCloseDisabled()"
       >
         <ng-container ngProjectAs="drawer-content">
