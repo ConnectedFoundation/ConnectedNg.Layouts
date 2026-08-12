@@ -12,6 +12,7 @@
         [(isOpen)]="isDrawerOpen"
         [position]="drawerPosition()"
         [mode]="drawerMode()"
+        [isCloseDisabled]="isDrawerCloseDisabled()"
       >
         <ng-container ngProjectAs="drawer-content">
           <ng-content select="cf-main-layout-content[for='drawer']">

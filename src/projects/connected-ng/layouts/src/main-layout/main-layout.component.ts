@@ -33,6 +33,7 @@ export class MainLayoutComponent {
   drawerBadgeHidden = input<boolean>(true);
   drawerPosition = input<'start' | 'end'>('end');
   drawerMode = input<'side' | 'over'>('over');
+  isDrawerCloseDisabled = input<boolean>(false);
   isDrawerCloseOnClickEnabled = input<boolean>();
 
   fabVisible = input<boolean>(false);
